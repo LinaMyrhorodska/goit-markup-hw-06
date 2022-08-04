@@ -25,6 +25,7 @@
     --bg-wwd-clr: rgba(47, 48, 58, 0.8);
     --bg-overlay-clr: rgba(33, 150, 243, 0.9);
     --bg-modal: rgba(0, 0, 0, 0.2);
+    --border-footer-sign: rgba(255, 255, 255, 0.3);
 
     /* others */
     --items: 9;
@@ -351,8 +352,9 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 40px;
 
-    min-width: 528px;
+    width: 528px;
     min-height: 581px;
     background-color: var(--bg-wh-clr);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -374,7 +376,188 @@ img {
     border-radius: 50%;
     background-color: transparent;
     cursor: pointer;
+    transition: fill var(--anim);
 }
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    fill: var(--accent-txt-clr);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-strong {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--black-txt-clr);
+}
+
+.modal-strong {
+    margin-bottom: 12px;
+}
+
+.modal-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.modal-text {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--grey-txt-clr);
+    margin-bottom: 4px;
+}
+
+.modal-box {
+    position: relative;  
+}
+
+.modal-input {
+    width: 100%;
+    min-height: 40px;
+    padding: 12px 12px 12px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color var(--anim);
+}
+
+.modal-input:focus-within {
+    border-color: var(--accent-txt-clr);
+    
+}
+
+.modal-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 12px;
+    fill: var(--black-txt-clr);
+    transition: fill var(--anim);
+     
+}
+
+.modal-input:focus-within + .modal-icon {
+    fill: var(--accent-txt-clr);
+}
+
+
+.modal-label-comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.modal-comment {
+    width: 100%;
+    min-height: 120px;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color var(--anim);
+    
+}
+
+.modal-comment:focus-within {
+    border-color: var(--accent-txt-clr);
+}
+
+
+.modal-label-comment textarea {
+    padding: 12px 16px 12px 16px;
+}
+
+
+.modal-label-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.modal-check:checked + .modal-check-box {
+    background-color: var(--accent-txt-clr);
+    border: var(--accent-txt-clr);
+}
+
+.modal-check-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border: 1px solid var(--black-txt-clr);
+    border-radius: 2px;
+    transition: background-color var(--anim);
+    
+}
+
+.modal-check-icon {
+    fill: var(--white-txt-clr);
+    
+}
+
+.modal-check-icon-use {
+    border: 0.2px solid var(--bg-wh-clr);
+}
+
+.modal-text-agree {
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: var(--contact-txt-clr);
+}
+
+.modal-text-terms {
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--accent-txt-clr);
+}
+
+.modal-btn-submit {
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+    height: 50px;
+    padding: 10px 55px 10px 55px;
+    margin: 0 auto;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.18;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    border-color: transparent;
+    color: var(--white-txt-clr);
+    background-color: var(--accent-txt-clr);
+    transition: background-color var(--anim);
+
+}
+
+.modal-btn-submit:hover,
+.modal-btn-submit:focus {
+    background-color: #188CE8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+
 
 /* section our pros */
 
@@ -789,7 +972,7 @@ img {
 .join-us-h {
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--white-txt-clr);
@@ -801,6 +984,7 @@ img {
 .join-us {
     display: block;
     margin-left: 70px;
+    margin-right: 93px;
     
 }
 
@@ -830,6 +1014,75 @@ img {
 .join-us-link:focus {
     fill: var(--bg-wh-clr);
     background-color: var(--accent-txt-clr);
+}
+
+.sign {
+    display: block;
+}
+
+.sign-form {
+    display: flex;
+}
+
+.sign-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white-txt-clr);
+    
+}
+
+.sign-form {
+    margin-top: 20px;
+}
+
+.sign-input {
+    width: 358px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 16px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    border: 1px solid var(--border-footer-sign);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: transparent;
+    transition: border var(--anim);
+
+}
+
+.sign-input:focus,
+.sign-input:not(:placeholder-shown) {
+    border: 1px solid var(--accent-txt-clr);
+    color: var(--white-txt-clr);
+}
+
+.sign-button {
+    min-width: 200px;
+    height: 100%;
+    padding: 10px 29px 10px 28px;
+    margin-left: 12px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--white-txt-clr);
+    background-color: var(--accent-txt-clr);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: transparent;
+    cursor: pointer;
+}
+
+.sign-icon {
+    margin-left: 10px;
 }
 
 /* page portfolio end */
